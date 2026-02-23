@@ -1,42 +1,35 @@
 #include <iostream>
 #include <cmath>
+#include <ctime>
+#include <cstdlib>
+
 using namespace std;
 int main() {
 
-int number,i, result,control,a;
-cout<<"bir sayi girin";
-cin>>number;
+srand(time(0)); 
 
+  int number, gizliSayi = rand() % 20 + 1;
 
-for(i=2; i<=number; i++){
-    control=1;
-    for (a=2; a<=sqrt(i); a++){
-        
-        if (i%a==0){
-            control=2;
-            break;
-        }
-    }
-        if (control==1){
-            cout<<i<<" ";
-        }
-    
-        
-        
-    
-        
-    }
+  cout << "Bilgisayar 1-20 arasi bir sayi tuttu." << endl;
+  cout << "\nSayiyi tahmin edin: ";
+
+  number=21;
+
+  while(number!=gizliSayi){
+
+      cin >> number;
+
+      if(number<gizliSayi){
+          cout << "Daha buyuk bir sayi gir: ";
+      }
+      else if (number>gizliSayi)
+      {
+          cout<<"Daha kucuk bir sayi gir: ";
+      }
+      else {
+          cout << "\nTebrikler sayiyi dogru buldun";
+      }
+  }
          
     return 0;
 }
-
-
-
-
-
-
-
-
-
-
-
